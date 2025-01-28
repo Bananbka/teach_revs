@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import nltk
+nltk.download(['punkt_tab', 'stopwords', 'averaged_perceptron_tagger_eng', 'vader_lexicon'])
+
 from nltk.sentiment.vader import SentimentIntensityAnalyzer # type: ignore
 from nltk.tokenize import word_tokenize # type: ignore
 from nltk.corpus import stopwords # type: ignore
@@ -53,9 +57,7 @@ async def main():
             final_result[i] = {"frequency":1, "sentiment":{}}        
             final_result[i]["sentiment"] = polarity
     
-    for i in final_result.keys():
-        print(f"{i}    {final_result[i]}")
-    # print(true_final_result)
+    print(final_result)
     
 
 asyncio.run(main())
