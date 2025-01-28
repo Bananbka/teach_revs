@@ -1,15 +1,21 @@
 package org.example.teacherreviews.DTO;
 
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
 public class User {
     private final int id;
     private final String username;
-    private String password;
+    private final String password;
+    private final String salt;
     private String email;
-    private Date registrationDate;
-
+    private LocalDateTime registrationDate;
+    private String pfpPath;
+    private String bio;
 }

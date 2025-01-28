@@ -3,12 +3,14 @@ package org.example.teacherreviews.DTO;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 
 @NoArgsConstructor
-@Getter
 @ToString
+@Getter
+@Setter
 public class University {
 
     private String id;

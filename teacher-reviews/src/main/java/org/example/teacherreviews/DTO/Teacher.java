@@ -1,14 +1,12 @@
 package org.example.teacherreviews.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Getter
 @ToString
+@Getter
+@Setter
 public class Teacher {
     private final int id;
     private final String name;
