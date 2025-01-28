@@ -3,11 +3,9 @@ package org.example.teacherreviews;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.teacherreviews.DTO.University;
-import org.junit.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.script.*;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -16,9 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.Iterator;
-import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 
 @SpringBootApplication
 public class TeacherReviewsApplication {
