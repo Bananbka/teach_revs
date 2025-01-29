@@ -13,7 +13,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 
 @SpringBootApplication
@@ -62,23 +64,36 @@ public class TeacherReviewsApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(TeacherReviewsApplication.class, args);
 
-		String workingDir = System.getProperty("user.dir");
-		System.out.println("Current working directory: " + workingDir);
+//		String workingDir = System.getProperty("user.dir");
+//		System.out.println("Current working directory: " + workingDir);
 
-		ProcessBuilder processBuilder = new ProcessBuilder("python3", resolvePythonScriptPath(resolvePythonScriptPath("py-modules/frequency_sensitivity_detector.py")));
+		ProcessBuilder processBuilder = new ProcessBuilder("python3", resolvePythonScriptPath(resolvePythonScriptPath("../py-modules/frequency_sensitivity_detector.py")));
 		processBuilder.redirectErrorStream(true);
 
 		Process process = processBuilder.start();
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
-				System.out.println("Python output: " + line); // Виводимо результат
+				System.out.println("🐍 Python output: " + line);
 			}
 		}
-
-		// Чекаємо завершення процесу
 		int exitCode = process.waitFor();
-		System.out.println("Python script exited with code: " + exitCode);
+		System.out.println("🐍 Python script exited with code: " + exitCode);
+
+		if (exitCode == 0) {
+
+
+			ObjectMapper mapper = new ObjectMapper();
+			JsonNode json = mapper.readTree(new FileReader("../py-modules/result.json"));
+            for (Iterator<JsonNode> it = json.elements(); it.hasNext(); ) {
+                var a = it.next();
+				System.out.println(a.get("name").asText() + "\t" +
+						a.get("count").asText() + "\t" +
+						a.get("polarity").asText() + "\n");
+
+            }
+
+		}
 
 
 		System.out.println("Finishing...");
