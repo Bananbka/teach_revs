@@ -91,5 +91,5 @@ buildNumber.properties
 
 
 ### Working files ###
-py-modules/results.json
+data/*
 teacher-reviews/results.json
