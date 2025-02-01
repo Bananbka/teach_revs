@@ -1,7 +1,9 @@
 package org.example.teacherreviews.DTO;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.*;
 
+@NoArgsConstructor(force=true)
 @RequiredArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -12,5 +14,5 @@ public class Teacher {
     private final String name;
     private final String universityId;
     private double rating;
-    private String[] traits;
+    private JsonNode traits;
 }

@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+@NoArgsConstructor(force=true)
 @RequiredArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -15,7 +16,8 @@ public class Review {
     private final int teacherId;
     private final String subject;
     private String content;
-    private final int rating;
+    private int rating;
     private final LocalDateTime cratedAt;
+    private LocalDateTime editedAt;
     private Boolean isVerified;
 }
