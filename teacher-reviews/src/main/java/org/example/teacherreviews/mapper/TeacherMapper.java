@@ -9,6 +9,6 @@ import org.mapstruct.factory.Mappers;
 public interface TeacherMapper {
     TeacherMapper INSTANCE = Mappers.getMapper(TeacherMapper.class);
 
-    Teacher toDAO(TeacherDAO teacherDAO);
-    TeacherDAO toDTO(Teacher teacher);
+    Teacher toDTO(TeacherDAO teacherDAO);
+    TeacherDAO toDAO(Teacher teacher);
 }
