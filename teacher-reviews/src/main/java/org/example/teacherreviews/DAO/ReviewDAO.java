@@ -32,6 +32,9 @@ public class ReviewDAO {
     )
     private TeacherDAO teacher;
 
+    @Column(name="rating", nullable = false)
+    private int rating;
+
     @Column(name="subject", nullable = false)
     private String subject;
 
