@@ -13,7 +13,7 @@ import java.util.List;
 public class UniversityController {
     private final UniversityService service;
 
-    @GetMapping
+    @GetMapping("/universities")
     public List<University> all() {
         return service.findAll();
     }

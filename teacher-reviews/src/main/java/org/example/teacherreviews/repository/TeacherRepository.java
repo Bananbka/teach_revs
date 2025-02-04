@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import org.example.teacherreviews.DAO.TeacherDAO;
 import org.example.teacherreviews.DAO.TeacherDAO;
+import org.example.teacherreviews.DAO.UniversityDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +21,7 @@ public interface TeacherRepository extends JpaRepository<TeacherDAO, Integer> {
 
     /* Change universityId to int (trouble of API) */
     @NonNull
-    TeacherDAO findByUniversityId(String universityId);
+    TeacherDAO findByUniversity(UniversityDAO university);
 
     @NonNull
     <S extends TeacherDAO> S save(@NonNull S review);

@@ -3,6 +3,7 @@ package org.example.teacherreviews.repository;
 import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import org.example.teacherreviews.DAO.ReviewDAO;
+import org.example.teacherreviews.DAO.UserDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +19,7 @@ public interface ReviewRepository extends JpaRepository<ReviewDAO, Integer> {
     List<ReviewDAO> findAll();
 
     @NonNull
-    ReviewDAO findByReviewerId(int reviewerId);
+    ReviewDAO findByUser(UserDAO userId);
 
     @NonNull
     ReviewDAO findByTeacherId(int teacherId);

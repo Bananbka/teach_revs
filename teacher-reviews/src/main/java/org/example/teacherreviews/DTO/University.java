@@ -11,7 +11,7 @@ import lombok.*;
 @Setter
 public class University {
 
-    private String id;
+    private int id;
     private String parentId;
     private String name;
     private String shortName;
@@ -37,7 +37,7 @@ public class University {
 
 
     public University(JsonNode json) {
-        this.id = json.get("university_id").asText();
+        this.id = json.get("university_id").asInt();
         this.parentId = json.get("university_parent_id").asText();
         this.name = json.get("university_name").asText();
         this.shortName = json.get("university_short_name").asText();

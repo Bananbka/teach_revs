@@ -13,7 +13,7 @@ import java.util.List;
 public class UserController {
     private final UserService service;
 
-    @GetMapping
+    @GetMapping("/users")
     public List<User> all() {
         return service.findAll();
     }

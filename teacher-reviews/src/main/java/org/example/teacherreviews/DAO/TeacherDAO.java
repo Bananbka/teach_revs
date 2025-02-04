@@ -13,7 +13,7 @@ import org.example.teacherreviews.converter.JsonNodeConverter;
 @ToString
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
-@Table(name="teacher")
+@Table(name="teachers")
 @Entity
 public class TeacherDAO {
     @Column(name="id", nullable = false)
@@ -22,10 +22,12 @@ public class TeacherDAO {
     private int id;
 
     @Column(name="name", nullable = false)
-    private final String name;
+    private String name;
 
-    @Column(name="universityId")
-    private final String universityId;
+    @ManyToOne
+    @JoinColumn(name = "university", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_teachers_universities"))
+    private UniversityDAO university;
 
     @Column(name="rating")
     private double rating;

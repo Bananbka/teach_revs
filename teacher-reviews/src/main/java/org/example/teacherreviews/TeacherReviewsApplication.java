@@ -6,6 +6,7 @@ import org.example.teacherreviews.DAO.UserDAO;
 import org.example.teacherreviews.DTO.University;
 import org.example.teacherreviews.DTO.User;
 import org.example.teacherreviews.mapper.UserMapper;
+import org.example.teacherreviews.service.ReviewService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -211,11 +212,7 @@ public class TeacherReviewsApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(TeacherReviewsApplication.class, args);
 
-		User user = new User(5, "zawwarudo", "cringe", "lutyi", "zawwarudo@gmail.com", LocalDate.now().atStartOfDay(), "", "");
-		UserDAO userDAO = UserMapper.INSTANCE.toDAO(user);
-		System.out.println(user + "\n" + userDAO);
 
-
-		System.out.println("Finishing...");
+		System.out.println("🏁 Finishing...");
 	}
 }

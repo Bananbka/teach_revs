@@ -10,33 +10,41 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
-@Table(name="review")
 @Entity
+@Table(name = "reviews")
 public class ReviewDAO {
 
-    @Column(name="id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name="reviewerId", nullable = false)
-    private final int reviewerId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_reviews_user")
+    )
+    private UserDAO user;
 
-    @Column(name="teacherId", nullable = false)
-    private final int teacherId;
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_id", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_reviews_teacher")
+    )
+    private TeacherDAO teacher;
 
     @Column(name="subject", nullable = false)
-    private final String subject;
+    private String subject;
 
     @Column(name="content")
     private String content;
 
-    @Column(name="createdAt", nullable = false)
-    private final LocalDateTime createdAt;
+    @Column(name="created_at", nullable = false)
+    private LocalDateTime createdAt;
 
-    @Column(name="editedAt")
+    @Column(name="edited_at")
     private LocalDateTime editedAt;
 
-    @Column(name="isVerified")
+    @Column(name="is_verified")
     private Boolean isVerified;
 }
+

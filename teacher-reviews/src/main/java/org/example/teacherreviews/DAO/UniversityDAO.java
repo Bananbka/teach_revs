@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "university")
+@Table(name = "universities")
 public class UniversityDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
