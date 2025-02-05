@@ -3,13 +3,11 @@ package org.example.teacherreviews.DAO;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.example.teacherreviews.converter.JsonNodeConverter;
 
 @Getter
+@Setter
 @ToString
 @NoArgsConstructor(force = true)
 @AllArgsConstructor

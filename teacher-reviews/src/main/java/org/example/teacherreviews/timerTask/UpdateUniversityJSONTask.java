@@ -25,8 +25,6 @@ public class UpdateUniversityJSONTask extends TimerTask {
     private void getUniversitiesFromAPI() throws IOException {
         URL url = new URL("https://registry.edbo.gov.ua/api/universities/?exp=json");
 
-        /* Parse id like an int, but not a String */
-
         ObjectMapper mapper = new ObjectMapper();
         JsonNode json = mapper.readTree(url);
         for (Iterator<JsonNode> it = json.elements(); it.hasNext(); ) {

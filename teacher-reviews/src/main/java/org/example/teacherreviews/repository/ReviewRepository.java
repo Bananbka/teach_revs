@@ -22,7 +22,7 @@ public interface ReviewRepository extends JpaRepository<ReviewDAO, Integer> {
     ReviewDAO findByUser(UserDAO userId);
 
     @NonNull
-    ReviewDAO findByTeacherId(int teacherId);
+    List<ReviewDAO> findByTeacherId(int teacherId);
 
     @NonNull
     <S extends ReviewDAO> S save(@NonNull S review);

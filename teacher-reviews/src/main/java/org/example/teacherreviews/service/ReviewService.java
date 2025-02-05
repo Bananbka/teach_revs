@@ -18,4 +18,10 @@ public class ReviewService {
                 .map(ReviewMapper.INSTANCE::toDTO)
                 .toList();
     }
+
+    public List<Review> findByTeacherId(int teacherId) {
+        return repository.findByTeacherId(teacherId).stream()
+                .map(ReviewMapper.INSTANCE::toDTO)
+                .toList();
+    }
 }

@@ -1,5 +1,6 @@
 package org.example.teacherreviews;
 
+import org.example.teacherreviews.service.ReviewService;
 import org.example.teacherreviews.service.TeacherService;
 import org.example.teacherreviews.timerTask.UpdateTeacherTraitsTask;
 import org.example.teacherreviews.timerTask.UpdateUniversityJSONTask;
@@ -45,11 +46,11 @@ public class TeacherReviewsApplication {
 		ApplicationContext context = SpringApplication.run(TeacherReviewsApplication.class, args);
 
 		Timer time = new Timer();
-		UpdateUniversityJSONTask task = new UpdateUniversityJSONTask();
-		UpdateTeacherTraitsTask task2 = new UpdateTeacherTraitsTask(context.getBean(TeacherService.class));
+//		UpdateUniversityJSONTask task = new UpdateUniversityJSONTask();
+		UpdateTeacherTraitsTask task2 = new UpdateTeacherTraitsTask(context.getBean(TeacherService.class), context.getBean(ReviewService.class));
 
-		time.schedule(task, 0, 10000);
-		time.schedule(task2, 0, 10000);
+//		time.schedule(task, 0, 10000);
+		time.schedule(task2, 0, 999999999);
 
 		System.out.println("🏁 Finishing...");
 	}
