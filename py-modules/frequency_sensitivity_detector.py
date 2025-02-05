@@ -45,19 +45,21 @@ async def main():
         raw = await translate_text(request_file.read(), "en")
     tokens = word_tokenize(raw)
     tokens_lowercase = [w.lower() for w in tokens if w.isalpha()]
-    stop_words = set(stopwords.words('english'))
-    tokens_filtered = [w for w in tokens_lowercase if w not in stop_words]
-    adjectives = []
-    
-    list_pos = nltk.pos_tag(tokens_filtered)
-    adjectives = [word[0] for word in list_pos if word[1] == "JJ"]
-    sia = SentimentIntensityAnalyzer()
+    list_pos = nltk.pos_tag(tokens_lowercase)
+    RB_added = []
+    for i in range(len(list_pos)): 
+        if (list_pos[i][1]=="JJ" and list_pos[i-1][1]=="RB"):
+            RB_added.append(f"{list_pos[i-1][0]} {list_pos[i][0]}")
+            pass
+        elif list_pos[i][1]=="JJ":
+            RB_added.append(list_pos[i][0])
 
     count_dict = {}
-    for i in adjectives:
-        word_count = adjectives.count(i)
+    for i in RB_added:
+        word_count = RB_added.count(i)
         count_dict[i] = word_count
 
+    sia = SentimentIntensityAnalyzer()
     list_result = []
     for i in count_dict.keys():
         polarity = sia.polarity_scores(i)["compound"]
