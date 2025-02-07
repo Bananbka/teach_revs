@@ -92,4 +92,5 @@ buildNumber.properties
 
 ### Working files ###
 data/*
+!data/*/
 teacher-reviews/result.json
