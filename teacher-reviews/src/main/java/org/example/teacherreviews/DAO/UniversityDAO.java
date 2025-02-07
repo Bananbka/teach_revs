@@ -12,7 +12,6 @@ import lombok.*;
 @Table(name = "universities")
 public class UniversityDAO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
     private int id;
 
