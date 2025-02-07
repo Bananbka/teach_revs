@@ -19,7 +19,6 @@ public class UpdateTeacherTraitsTask extends TimerTask {
     private final TeacherService teacherService;
     private final ReviewService reviewService;
 
-    @Autowired
     public UpdateTeacherTraitsTask(TeacherService teacherService, ReviewService reviewService) {
         this.teacherService = teacherService;
         this.reviewService = reviewService;
