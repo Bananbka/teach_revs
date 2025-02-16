@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+    --color-text-50: #e6f3fe;
+    --color-text-100: #cee7fd;
+    --color-text-200: #9dcffb;
+    --color-text-300: #6bb7fa;
+    --color-text-400: #3a9ff8;
+    --color-text-500: #0987f6;
+    --color-text-600: #076cc5;
+    --color-text-700: #055194;
+    --color-text-800: #043662;
+    --color-text-900: #021b31;
+    --color-text-950: #010e19;
+
+    --color-background-50: #e7f4fe;
+    --color-background-100: #cfe9fc;
+    --color-background-200: #9fd4f9;
+    --color-background-300: #6ebef7;
+    --color-background-400: #3ea8f4;
+    --color-background-500: #0e92f1;
+    --color-background-600: #0b75c1;
+    --color-background-700: #085891;
+    --color-background-800: #063b60;
+    --color-background-900: #031d30;
+    --color-background-950: #010f18;
+
+    --color-primary-50: #fee7ed;
+    --color-primary-100: #fdcedb;
+    --color-primary-200: #fb9db8;
+    --color-primary-300: #f96c94;
+    --color-primary-400: #f73b70;
+    --color-primary-500: #f50a4d;
+    --color-primary-600: #c4083d;
+    --color-primary-700: #93062e;
+    --color-primary-800: #62041f;
+    --color-primary-900: #31020f;
+    --color-primary-950: #180108;
+
+    --color-secondary-50: #e7f2fe;
+    --color-secondary-100: #cee5fd;
+    --color-secondary-200: #9dccfb;
+    --color-secondary-300: #6cb2f9;
+    --color-secondary-400: #3b99f7;
+    --color-secondary-500: #0a7ff5;
+    --color-secondary-600: #0866c4;
+    --color-secondary-700: #064c93;
+    --color-secondary-800: #043362;
+    --color-secondary-900: #021931;
+    --color-secondary-950: #010d18;
+
+    --color-accent-50: #e9fceb;
+    --color-accent-100: #d3f8d7;
+    --color-accent-200: #a7f1ae;
+    --color-accent-300: #7bea86;
+    --color-accent-400: #4fe35d;
+    --color-accent-500: #22dd35;
+    --color-accent-600: #1cb02a;
+    --color-accent-700: #158420;
+    --color-accent-800: #0e5815;
+    --color-accent-900: #072c0b;
+    --color-accent-950: #031605;
+}
+
+@font-face {
+    font-family: 'Inter', sans-serif;
+
+}
