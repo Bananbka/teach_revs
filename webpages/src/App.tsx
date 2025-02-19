@@ -58,8 +58,8 @@ export default function MyApp() {
                     <h2 className='font-bold text-[36px] mx-auto block w-fit'>
                         Recent feedback
                     </h2>
-                    <div className='flex gap-5  w-full mt-[50px]'>
-                        <div className='bg-background-900 flex flex-col flex-1 p-5 aspect-square rounded-2xl min-w-0'>
+                    <div className='flex gap-5  w-full mt-[50px] relative'>
+                        <div className='bg-background-900 flex flex-col flex-1 p-5 aspect-square rounded-2xl min-w-0 min-h-0 relative'>
                             <div className='flex gap-5 relative'>
                                 <div className='flex-1 aspect-square bg-[url(teacher/blank-teacher-pick-1_1.png)] bg-cover bg-center rounded-full overflow-hidden'></div>
                                 <div className='flex flex-4 items-center text-[24px] font-semibold overflow-hidden truncate whitespace-nowrap
@@ -67,7 +67,16 @@ export default function MyApp() {
                                     Punpun overflow overflowoverflowoverflowoverflow
                                 </div>
                             </div>
-                            <div></div>
+                            <p className='mt-5 w-full overflow-hidden
+                            after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1/3 after:pointer-events-none after:rounded-b-2xl after:bg-gradient-to-t after:from-background-900 after:from-15% after:to-transparent
+                            before:absolute before:block before:w-30 before:aspect-square before:bottom-0 before:left-0 before:bg-radial-[at_0%_100%] before:from-background-900 before:from-40% before:to-transparent'>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium delectus, doloremque eius eos et ipsam iure magnam neque perspiciatis ratione sit suscipit tempore temporibus ut veritatis? Eos eveniet libero temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto at atque commodi consequuntur deserunt dolorem ducimus explicabo minus nihil, nostrum odio praesentium quia repellendus reprehenderit soluta tempora temporibus? Minima!
+                            </p>
+                            <div className='bg-primary-500 border-12 border-background-950
+                            w-30 absolute -bottom-5 -left-5 aspect-square rounded-full
+                            '>
+                                90
+                            </div>
                         </div>
                         <div className='bg-background-900 flex flex-col flex-1 p-5 aspect-square rounded-2xl'>
                             <div className='flex gap-5'>
